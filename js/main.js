@@ -29,14 +29,16 @@ app.post("/register", (req, res) => {
 })
 app.post("/login", (req, res) => {
     const { firstName, lastName} = req.body;
-    if(users.includes({firstName, lastName})){
-        res.status(200).json({
-        message:"login successfully",
-    })
-    }else{
-        res.status(404).json({
-            message:"login is not successfully",
+    for (let i = 0; i < users.length; i++) {
+        if(users.includes({firstName, lastName})){
+            res.status(200).json({
+            message:"login successfully",
         })
+        }else{
+            res.status(404).json({
+                message:"login is not successfully",
+            })
+        }
     }
     
 })
