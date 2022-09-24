@@ -71,15 +71,13 @@ app.patch("/users/:id", (req, res) => {
     let newId = req.url.split(":")
     console.log(newId);
     const { firstName, lastName } = req.body;
-    users.forEach((x) => {
-        if (x.id === newId) {
-            firstName === x.firstName
-            lastName === x.lastName
-            res.status(200).json({
-                message:"change successfully"
-            });
-        }
-    });
+    if (users.indexOf(newId[1]) !== -1) {
+        firstName === firstName
+        lastName === lastName
+        res.status(200).json({
+            message:"change successfully"
+        });
+    }
     res.status(400).json({
         message:"change not successfully"
     });
