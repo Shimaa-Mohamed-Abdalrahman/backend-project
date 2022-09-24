@@ -30,7 +30,7 @@ app.post("/register", (req, res) => {
 app.post("/login", (req, res) => {
     const { firstName, lastName} = req.body;
     for (let i = 0; i < users.length; i++) {
-        if(users.includes({firstName, lastName})){
+        if(users.includes({firstName[i], lastName[i]})){
             res.status(200).json({
             message:"login successfully",
         })
