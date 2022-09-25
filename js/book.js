@@ -24,8 +24,6 @@ app.use(bodyParser.json());
 
 // get
 app.get("/saved", (req, res) => {
-    let id = books.length + 1 
-    books.push(id)
     res.status(200).json({
         message:"All Books",
         data: books,
