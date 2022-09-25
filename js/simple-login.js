@@ -42,7 +42,6 @@ app.post("/register", (req, res) => {
     else {
         res.status(400).json({
             message:"register not successfully",
-            data: users,
         })  
     }
     // console.log(typeof password)
